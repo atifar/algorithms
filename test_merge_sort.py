@@ -2,6 +2,10 @@ from merge_sort import merge_sort
 # import pytest
 
 
+def test_merge_sort_empty():
+    assert merge_sort([]) == []
+
+
 def test_merge_sort_one_element():
     assert merge_sort([6]) == [6]
 
