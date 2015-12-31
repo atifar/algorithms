@@ -27,11 +27,11 @@ def int_mult(x, y):
     x_left = x[:x_len - m]
     x_right = x[x_len - m:]
     y_left = y[:y_len - m]
-    yRight = y[y_len - m:]
+    y_right = y[y_len - m:]
 
     p1 = int_mult(x_left, y_left)
-    p2 = int_mult(x_right, yRight)
-    p3 = int_mult(str_sum(x_left, x_right), str_sum(y_left, yRight))
+    p2 = int_mult(x_right, y_right)
+    p3 = int_mult(str_sum(x_left, x_right), str_sum(y_left, y_right))
     p = str_sum(
         p1 + '0'*2*m,
         str_sum(str_sum(str_sum(p3, '-' + p1), '-' + p2) + '0'*m, p2)
@@ -47,9 +47,4 @@ def str_sum(a_str, b_str):
 
     Returns: string (decimal integer)
     """
-
-    a = int(a_str)
-    b = int(b_str)
-    s_str = str(a + b)
-
-    return s_str
+    return str(int(a_str) + int(b_str))
