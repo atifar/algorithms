@@ -42,5 +42,8 @@ class Queue:
         if len(self.entries) > 0:
             return self.entries[-1]
 
+    def is_empty(self):
+        return self.entries == []
+
     def size(self):
         return len(self.entries)
