@@ -11,6 +11,22 @@ def initialize_stack(*entries):
 
 
 ###########################################################################
+# stack creation
+###########################################################################
+
+def test_create_empty_stack():
+    s = Stack()
+    assert s.entries == []
+
+
+def test_create_stack_with_entries():
+    STACK_ENTRIES = (-4, 2, 999, 17, 0)
+    s = initialize_stack(*STACK_ENTRIES)
+    for idx, entry in enumerate(STACK_ENTRIES):
+        assert s.entries[idx] == entry
+
+
+###########################################################################
 # size
 ###########################################################################
 
