@@ -3,6 +3,10 @@
 from data_structs import Stack, Queue
 
 
+###########################################################################
+# stack tests #############################################################
+###########################################################################
+
 def initialize_stack(*entries):
     s = Stack()
     for entry in entries:
@@ -88,9 +92,27 @@ def test_pop_from_empty_stack():
 
 
 ###########################################################################
+# queue tests #############################################################
+###########################################################################
+
+def initialize_queue(*entries):
+    q = Queue()
+    for entry in entries:
+        q.push(entry)
+    return q
+
+
+###########################################################################
 # queue creation
 ###########################################################################
 
 def test_create_empty_queue():
     q = Queue()
     assert q.entries == []
+
+
+def test_create_queue_with_entries():
+    QUEUE_ENTRIES = (99, 0, -58, 17, 30)
+    q = initialize_queue(*QUEUE_ENTRIES)
+    for idx, entry in enumerate(QUEUE_ENTRIES):
+        assert q.entries[-1 - idx] == entry

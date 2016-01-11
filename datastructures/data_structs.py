@@ -30,3 +30,6 @@ class Queue:
 
     def __init__(self):
         self.entries = []
+
+    def push(self, entry):
+        self.entries.insert(0, entry)
