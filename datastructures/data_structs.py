@@ -23,3 +23,10 @@ class Stack:
 
     def size(self):
         return len(self.entries)
+
+
+class Queue:
+    """A python queue class"""
+
+    def __init__(self):
+        self.entries = []

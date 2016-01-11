@@ -1,6 +1,6 @@
 """Unit tests for data_structs.py"""
 
-from data_structs import Stack
+from data_structs import Stack, Queue
 
 
 def initialize_stack(*entries):
@@ -85,3 +85,12 @@ def test_pop_from_nonempty_stack():
 def test_pop_from_empty_stack():
     s = initialize_stack()
     assert s.pop() is None
+
+
+###########################################################################
+# queue creation
+###########################################################################
+
+def test_create_empty_queue():
+    q = Queue()
+    assert q.entries == []
