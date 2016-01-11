@@ -34,5 +34,9 @@ class Queue:
     def push(self, entry):
         self.entries.insert(0, entry)
 
+    def end(self):
+        if len(self.entries) > 0:
+            return self.entries[-1]
+
     def size(self):
         return len(self.entries)

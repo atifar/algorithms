@@ -135,3 +135,17 @@ def test_add_entries_to_queue():
     q.push(-295)
     assert q.size() == 4
     assert q.entries[0] == -295
+
+
+###########################################################################
+# end
+###########################################################################
+
+def test_end_of_empty_queue():
+    q = initialize_queue()
+    assert q.end() is None
+
+
+def test_end_of_nonempty_queue():
+    q = initialize_queue(3, 82, 61)
+    assert q.end() == 3
