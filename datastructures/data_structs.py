@@ -33,3 +33,6 @@ class Queue:
 
     def push(self, entry):
         self.entries.insert(0, entry)
+
+    def size(self):
+        return len(self.entries)

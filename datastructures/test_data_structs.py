@@ -116,3 +116,22 @@ def test_create_queue_with_entries():
     q = initialize_queue(*QUEUE_ENTRIES)
     for idx, entry in enumerate(QUEUE_ENTRIES):
         assert q.entries[-1 - idx] == entry
+
+
+###########################################################################
+# push
+###########################################################################
+
+def test_push_one_entry_onto_empty_queue():
+    q = initialize_queue()
+    q.push(48)
+    assert q.size() == 1
+    assert q.entries[-1] == 48
+
+
+def test_add_entries_to_queue():
+    q = initialize_queue(3, 82, 61)
+    assert q.size() == 3
+    q.push(-295)
+    assert q.size() == 4
+    assert q.entries[0] == -295
