@@ -149,3 +149,17 @@ def test_end_of_empty_queue():
 def test_end_of_nonempty_queue():
     q = initialize_queue(3, 82, 61)
     assert q.end() == 3
+
+
+###########################################################################
+# pop
+###########################################################################
+
+def test_pop_from_nonempty_queue():
+    q = initialize_queue(3)
+    assert q.pop() == 3
+
+
+def test_pop_from_empty_queue():
+    q = initialize_queue()
+    assert q.pop() is None
